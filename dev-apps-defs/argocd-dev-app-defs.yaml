@@ -12,7 +12,6 @@ spec:
     repoURL: github.com/striver121/platform_devs.git
     path: demoapp/overlays/dev
     targetRevision: master
-    path: applications
   syncPolicy:
     automated:
       prune: true
