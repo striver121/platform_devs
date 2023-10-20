@@ -5,7 +5,7 @@ metadata:
   name: demoapp-dev
   namespace: demoapp-dev
 spec:
-  project: platform_admin
+  project: platform_dev
   destination:
     server: https://34.31.116.147
   source:
