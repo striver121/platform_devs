@@ -8,7 +8,8 @@ spec:
   destination:
     server: https://34.31.116.147
   source:
-    repoURL: github.com/striver121/platform_devs/demoapp/overlays/dev
+    repoURL: github.com/striver121/platform_devs.git
+    path: demoapp/overlays/dev
     targetRevision: master
     path: applications
   syncPolicy:
