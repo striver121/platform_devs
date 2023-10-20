@@ -6,7 +6,6 @@ namesuffix: -dev
 
 resources:
   - ../../base
-  - patches/argocd-applications.yaml
       
 images:
  - name: docker.io/striver121/demoapp:latest
