@@ -3,7 +3,7 @@ apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
   name: demoapp-dev
-  namespace: demoapp-dev
+  namespace: demoapp-devs
 spec:
   project: platform_dev
   destination:
