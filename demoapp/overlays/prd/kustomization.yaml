@@ -5,7 +5,7 @@ namespace: demo-app
 nameSuffix: -prd
 
 resources:
-  - ../../bases
+  - ../../base
       
 images:
  - name: docker.io/striver121/demoapp:latest
