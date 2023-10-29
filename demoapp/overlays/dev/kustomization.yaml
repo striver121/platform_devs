@@ -1,7 +1,7 @@
 apiVersion: kustomize.config.k8s.io/v1beta1
 kind: Kustomization
 
-namespace: demo-app
+#namespace: demo-app
 namesuffix: -dev
 
 resources:
@@ -17,13 +17,13 @@ images:
    newName: docker.io/striver121/demoapp
    newTag: v.0.23
 
-#patchesJson6902:
-#- target:
-#    group: ""
-#    version: v1
-#    kind: ServiceAccount
-#    name: gcp-connect-sa
-#  patch: |-
-#    - op: replace
-#      path: /metadata/name
-#      value: gcp-connect-sa   
+patchesJson6902:
+- target:
+    group: ""
+    version: v1
+    kind: ServiceAccount
+    name: gcp-connect-sa
+  patch: |-
+    - op: replace
+      path: /metadata/name
+      value: gcp-connect-sa   
