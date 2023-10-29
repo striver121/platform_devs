@@ -1,18 +1,18 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: demo-app
+  name: demoapp
 spec:
   selector:
     matchLabels:
-      app: demo-app
+      app: demoapp
   template:
     metadata:
       labels:
-        app: demo-app
+        app: demoapp
     spec:
       containers:
-      - name: demo-app
+      - name: demoapp
         image: docker.io/striver121/demoapp:latest
         ports:
         - name: http
