@@ -16,3 +16,14 @@ images:
  - name: docker.io/striver121/demoapp:latest
    newName: docker.io/striver121/demoapp
    newTag: v.0.23
+
+patchesJson6902:
+- target:
+    group: ""
+    version: v1
+    kind: ServiceAccount
+    name: gcp-connect-sa
+  patch: |-
+    - op: replace
+      path: /metadata/name
+      value: gcp-connect-sa   
