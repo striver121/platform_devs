@@ -27,3 +27,21 @@ patchesJson6902:
     - op: replace
       path: /metadata/name
       value: gcp-connect-sa   
+- target:
+    group: "secrets-store.csi.x-k8s.io"
+    version: v1
+    kind: SecretProviderClass
+    name: gcp-certificatestore-connect
+  patch: |-
+    - op: replace
+      path: /metadata/name
+      value: gcp-certificatestore-connect
+- target:
+    group: "secrets-store.csi.x-k8s.io"
+    version: v1
+    kind: SecretProviderClass
+    name: gcp-secretstore-connect
+  patch: |-
+    - op: replace
+      path: /metadata/name
+      value: gcp-secretstore-connect
