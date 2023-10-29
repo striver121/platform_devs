@@ -6,10 +6,11 @@ namesuffix: -dev
 
 resources:
   - ../../base
+  - resources/gcp-connect-sa.yaml
   - resources/secretproviderclass.yaml
 
 patchesStrategicMerge:
-  - resources/secretvolumes.yaml
+  - resources/secret-insert-deployment.yaml
       
 images:
  - name: docker.io/striver121/demoapp:latest
