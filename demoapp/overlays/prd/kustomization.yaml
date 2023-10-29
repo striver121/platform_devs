@@ -1,13 +1,38 @@
 apiVersion: kustomize.config.k8s.io/v1beta1
 kind: Kustomization
 
-# namespace: demo-app
-nameSuffix: -prd
+namespace: demoapp-prd
+namesuffix: -prd
 
 resources:
   - ../../base
+  - resources/vault-connect-sa.yaml
+  - resources/secretproviderclass.yaml
+
+patchesStrategicMerge:
+  - resources/secret-insert-deployment.yaml
       
 images:
  - name: docker.io/striver121/demoapp:latest
    newName: docker.io/striver121/demoapp
    newTag: v.0.23
+
+patchesJson6902:
+- target:
+    group: ""
+    version: v1
+    kind: ServiceAccount
+    name: vault-connect-sa
+  patch: |-
+    - op: replace
+      path: /metadata/name
+      value: vault-connect-sa   
+- target:
+    group: "secrets-store.csi.x-k8s.io"
+    version: v1
+    kind: SecretProviderClass
+    name: vault-connect
+  patch: |-
+    - op: replace
+      path: /metadata/name
+      value: vault-connect
