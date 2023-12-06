@@ -15,7 +15,9 @@ patchesStrategicMerge:
 images:
  - name: docker.io/striver121/demoapp:latest
    newName: docker.io/striver121/demoapp
-   newTag: v.0.23
+#   newTag: v.0.23
+   newTag: v.110
+
 
 patchesJson6902:
 - target:
